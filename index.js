@@ -42,13 +42,7 @@ async function run() {
   
       // Define routes
       app.get("/", async (req, res) => {
-        const db = client.db("UserDB");
-        const collection = db.collection("Log");
-        const user = await collection.findOne({ username: req.session.username });
-        if (!user) {
-          return res.status(404).json({ message: "User not found" });
-        }
-        res.json({ message: `Hello, ${user.username}` });
+        res.json({ message: `Hello, Server!!!` });
       });
   
       // Define routes
