@@ -9,7 +9,7 @@ const port = 3000;
 const corsOptions = process.env.CORS_OPTIONS;
 
 const db_url = process.env.DB_URL;
-const cliecnt = new MongoClient(db_url, {
+const client = new MongoClient(db_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -23,6 +23,9 @@ app.listen(port, () => {
 });
 
 app.post('/login', async (req, res) => {
+
+    await client.connect();
+
     const { username, password } = req.body;
     const db = client.db('UsersDB');
     const collection = db.collection('Log');
