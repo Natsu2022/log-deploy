@@ -165,10 +165,10 @@ async function run() {
         const collection = db.collection("Log");
         // Find the user with the given username
         const user = await collection.findOne({ username });
-        const userID = user.userID;
-        const token = jwt.sign({ userID, role: "admin" }, secret, {
-          expiresIn: "1day",
-        });
+        // const userID = user.userID;
+        // const token = jwt.sign({ userID, role: "admin" }, secret, {
+        //   expiresIn: "1day",
+        // });
 
 
         // If the user doesn't exist, return an error
