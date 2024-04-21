@@ -18,7 +18,6 @@ app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
 async function connect() {
-    try {
         await cliecnt.connect();
         console.log('Connected to MongoDB');
 
@@ -26,9 +25,6 @@ async function connect() {
             const logs = await cliecnt.db('logs').collection('log').find({}).toArray();
             res.json(logs);
         });
-    } catch (error) {
-        console.error('Error connecting to MongoDB', error);
-    }
 }
 
 app.listen(port, () => {
