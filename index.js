@@ -7,7 +7,7 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-    res.send('API is ');
+    res.send('API is runing...');
 });
 
 app.get('/about', (req, res) => {
