@@ -3,6 +3,7 @@ const app  = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { MongoClient } = require('mongodb');
+const e = require('express');
 
 const port = 3000;
 const corsOptions = process.env.CORS_OPTIONS;
@@ -57,4 +58,4 @@ app.get('/about', (req, res) => {
 });
 
 
-connect().catch(console.error);
+exports.app = app;
