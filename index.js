@@ -39,20 +39,6 @@ app.use(
   })
 );
 
-const ifNotLoggedin = (req, res, next) => {
-  if (!req.session.isLoggedIn) {
-    return res.status(401).json({ message: "You are not logged in" });
-  }
-  next();
-};
-
-const ifLoggedin = (req, res, next) => {
-  if (req.session.isLoggedIn) {
-    return res.status(401).json({ message: "You are already logged in" });
-  }
-  next();
-};
-
 app.get('/', (req, res) => {
     res.send('Server is working!');
 });
