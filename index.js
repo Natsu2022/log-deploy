@@ -43,4 +43,5 @@ app.get('/about', (req, res) => {
     res.send('About Us');
 });
 
-module.exports = app;
+
+connect().catch(console.error);
