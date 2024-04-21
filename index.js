@@ -22,22 +22,11 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
 });
 
-const secret = "mysecret"; // Secret key for JWT
-// const token = jwt.sign({ username, role: 'admin' }, process.env.JWT_SECRET, { expiresIn: '1h' });
-
 app.use(bodyParser.json());
 const corsOptions = process.env.CORSOPTION;
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
-app.use(
-  session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: true,
-  })
-);
 
 app.get('/', (req, res) => {
     res.send('Server is working!');
