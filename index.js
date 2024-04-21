@@ -14,9 +14,9 @@ require("dotenv").config();
 
 // Initialize Express app
 const app = express();
-const port = process.env.PORT; // Port number
+const port = 8000; // Port number
 
-const uri = process.env.DB_URL; // Connection URI
+const uri = "mongodb+srv://Adminton:e2Z57dwLeO7F6AHV@cluster.3nvsqiu.mongodb.net/"; // Connection URI
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
