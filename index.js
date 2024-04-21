@@ -54,7 +54,7 @@ const ifLoggedin = (req, res, next) => {
 };
 
 app.get('/', (req, res) => {
-    res.send('API is working!');
+    res.send('Server is working!');
 });
 
 app.get('/about', (req, res) => {
