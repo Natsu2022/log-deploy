@@ -36,4 +36,8 @@ app.get('/about', (req, res) => {
     res.send('About Us');
 });
 
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
 module.exports = app;
