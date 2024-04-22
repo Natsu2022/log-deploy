@@ -17,10 +17,7 @@ if (!db_url) {
     process.exit(1);
 }
 
-const client = new MongoClient(db_url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+const client = new MongoClient(db_url);
 
 app.use(cors());
 app.use(bodyParser.json());
